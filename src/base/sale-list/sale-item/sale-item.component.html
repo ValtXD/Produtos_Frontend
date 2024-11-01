@@ -1,0 +1,39 @@
+<div class="flex flex-column gap-1">
+  <h1>CADASTRO DE VENDA</h1>
+
+  <form [formGroup]="formGroup">
+    <div class="flex flex-column gap-3 mb-4">
+      <mat-form-field>
+        <mat-label>nrf</mat-label>
+        <input matInput type="text" formControlName="nrf" autofocus required>
+        <mat-error>Campo inválido</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Funcionário</mat-label>
+        <input matInput type="text" formControlName="employee" required>
+        <mat-error>Campo inválido</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Produto</mat-label>
+        <input matInput type="text" formControlName="product" required>
+        <mat-error>Campo inválido</mat-error>
+      </mat-form-field>
+
+
+      <mat-form-field>
+        <mat-label>Cliente</mat-label>
+        <input matInput type="text" formControlName="client" required>
+        <mat-error>Campo inválido</mat-error>
+      </mat-form-field>
+
+    </div>
+
+    <button mat-flat-button class="btn-default" id="save" type="submit"
+            (click)="saveOrUpdate()"
+            [disabled]="!formGroup.valid"> Salvar Venda
+    </button>
+  </form>
+</div>
